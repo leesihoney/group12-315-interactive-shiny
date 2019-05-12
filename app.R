@@ -49,7 +49,7 @@ ui <- fluidPage(
                    tabPanel("Scatterplot", plotOutput("scatterplot"))
                  ),
      verbatimTextOutput(outputId = "RegSum")
-)
+     )
 
 )
 
