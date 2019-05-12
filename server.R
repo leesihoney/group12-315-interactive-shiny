@@ -15,7 +15,7 @@ library(dendextend)
 
 
 # dataset
-accidents <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/accidents_2017.csv?token=AI2P3NBRJNC7OMNYFPNTPGS42MGNA")
+accidents <- read.csv("barcelona-data-sets/accidents_2017.csv")
 accidents <- accidents[complete.cases(accidents),]
 accidents$Weekday <- as.factor(accidents$Weekday)
 accidents$Month <- as.factor(accidents$Month)
@@ -28,10 +28,10 @@ accidents <- mutate(accidents,
 accidents$facet = factor(accidents$timegroup, levels = c("Before 4/1/16", "Between 4/1/16 and 7/1/16", "Between 7/1/16 and 10/1/16", "After 10/1/16"))
 
 
-deaths <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/deaths.csv?token=AI2P3NGRMDEN4XGYVNIXGT243MKDE")
-population <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/population.csv?token=AI2P3NCUW6KGWTSS3WJZTG243MFBI")
-unemployment <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/unemployment.csv?token=AI2P3NAFMM7Z3MPU4MZNWUS43MFDW")
-births <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/births.csv?token=AI2P3NBX2365P3KI3ZEEVNS43MPSC")
+deaths <- read.csv("barcelona-data-sets/deaths.csv")
+population <- read.csv("barcelona-data-sets/population.csv")
+unemployment <- read.csv("barcelona-data-sets/unemployment.csv")
+births <- read.csv("barcelona-data-sets/births.csv")
 
 
 
@@ -52,8 +52,8 @@ collated.data.rates <- data.frame(District.Name = collated.data$District.Name,
 
 row.names(collated.data.rates) <- collated.data.rates$District.Name
 
-immigrants_nationality <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/immigrants_by_nationality.csv?token=AJLWINQL6MYBRGTSDQ6OYW2424SLU")
-baby.names <- read.csv("https://raw.githubusercontent.com/wengshian1994/315-Interactive-Project/master/barcelona-data-sets/most_frequent_baby_names.csv?token=AI2P3NG2QNKS54QSUDRRJPC43NSZY")
+immigrants_nationality <- read.csv("barcelona-data-sets/immigrants_by_nationality.csv")
+baby.names <- read.csv("barcelona-data-sets/most_frequent_baby_names.csv")
 baby.names$Year <- as.character(baby.names$Year)
 uniq <- unique(immigrants_nationality$Nationality)
 not_shared <- c("Brasil", "United States", "United Kingdom", "Camerun", "State of Palestine", "Congo", "Trinidad and Tobago", "Cambodja", "The Bahamas", "São Tomé and Príncipe", "Antigua and Barbuda", "Saint Kitts and Nevis", "East Timor", "Palestinian territories")
